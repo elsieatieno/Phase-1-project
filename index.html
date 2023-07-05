@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comics Universe</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header id="page_header">
+        <nav id="navigation_bar">
+            <img src="icons/batman-logo .png" alt="batman_logo" class="logo">
+            <div id="add_character">
+                <img src="icons/add .png" alt="add_icon" class="header">
+                <img src="icons/user .png" alt="user_icon" class="header">
+            </div>
+         </nav>
+    </header>
+
+    <main id="page_content">
+        <div id="information">
+            The 731+ members of the Comic Universe.
+            <form action="" method="get">
+                <input type="text" placeholder="Search" id="search_id">
+                <input type="submit">
+            </form>
+        </div>
+        <hr>
+
+        <div id="image_display">
+            <img src="abesapien.jpeg" alt="absesapien" class="character">
+            <p class="character_name">Abe Sapien</p>
+            <hr>
+            <img src="atom.jpeg" alt="absesapien" class="character">
+            <p class="character_name">Atom</p>
+            <hr>
+            <img src="nightcrawler.jpeg" alt="absesapien" class="character">
+            <p class="character_name">Nightcrawler</p>
+        </div>
+
+        <hr>
+        <div id="character_info"></div>
+    </main>
+    <footer id="page_footer">
+        <div id="social_media">
+            <img src="icons/facebook.png" alt="facebook_logo" class="footer">
+            <img src="icons/instagram.png" alt="instagram_logo" class="footer">
+            <img src="icons/twitter-sign.png" alt="twitter_logo" class="footer">
+        </div>
+        <p>Yukio & Royalty</p>
+        <div id="copyright">
+            <p>&copy; 2023 Comic Universe. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
