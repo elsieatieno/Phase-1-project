@@ -61,3 +61,7 @@ header{
 margin: 0px;
 padding-bottom: 2px;
 }
+#character_info{
+    display:flex;
+    justify-content: space-evenly;
+}
