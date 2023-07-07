@@ -1,6 +1,7 @@
 const form = document.querySelector('form')
 const input = document.querySelector('#search_id');
 const submit = document.querySelector('#submit');
+const addIcon = document.querySelector('#add_icon');
 
 
 form.addEventListener('submit',function (event){
@@ -9,6 +10,7 @@ form.addEventListener('submit',function (event){
     searchCharacter(form_input)
     form.reset()
 })
+
 
 function allCharacters(){
     fetch(`http://localhost:3000/superheroes`)
@@ -27,42 +29,39 @@ function searchCharacter(search_term){
 function displayCharacter(character){
         const display = document.querySelector('#image_display');
         display.innerHTML = ' ';
+  
+        const name = document.createElement('p')
+        name.classList = 'character_name'
+        name.textContent = character.name
 
         const image = document.createElement('img')
         image.classList = 'character'
         image.src = character['images']['lg'];
         image.alt = character.name
 
-        const name = document.createElement('p')
-        name.classList = 'character_name'
-        name.textContent = character.name
-
-
         display.appendChild(name)
         display.appendChild(image)
+
         name.addEventListener('click', function(){
             showInfo(character)})
-
     }
 
 function showInfo(character){
-    // const information = document.querySelector('#character_info')
-
     const imageInfo = document.querySelector('#image')
-    imageInfo.innerHTML = ' '
+    
     imageInfo.src = character.images.md
 
     const nameInfo = document.querySelector('#name')
-    nameInfo.innerHTML = ' '
+    
     nameInfo.textContent = `Name: ${character.name}`
 
     const slugInfo = document.querySelector('#slug')
-    slugInfo.innerHTML = ' '
+    
     slugInfo.textContent = `Slug: ${character.slug}`
 
     const statsInfo = document.querySelector('#powerstats')
     const ul = document.querySelector('.powerstats')
-    ul.innerHTML = ' '
+    
     document.querySelector('.intelligence span').innerText = character.powerstats.intelligence
     document.querySelector('.strength span').innerText = character.powerstats.strength
     document.querySelector('.speed span').innerText = character.powerstats.speed
@@ -72,7 +71,7 @@ function showInfo(character){
     
     const appearanceInfo = document.querySelector('#appearance')
     const appearance= document.querySelector('.appearance')
-    appearance.innerHTML = ' '
+    
     document.querySelector('.gender span').innerText = character.appearance.gender
     document.querySelector('.race span').innerText = character.appearance.race
     document.querySelector('.height span').innerText = character.appearance.height[0]
@@ -84,13 +83,13 @@ function showInfo(character){
 
     const workInfo = document.querySelector('#work')
     const work =document.querySelector('.work')
-    work.innerHTML = ' '
+    
     document.querySelector('.occupation span').innerText = character.work['occupation']
     document.querySelector('.base span').innerText = character.work.base
 
     const connectionsInfo = document.querySelector('#connections')
     const connections = document.querySelector('.connections')
-    connections.innerHTML = ' '
+    
     document.querySelector('.group_affiliation span').innerText =character.connections['groupAffiliation']
     document.querySelector('.relatives span').innerText =character.connections['relatives']
     
@@ -134,3 +133,7 @@ function showInfo(character){
 }
 }
 
+
+
+
+    
