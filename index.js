@@ -49,16 +49,20 @@ function showInfo(character){
     // const information = document.querySelector('#character_info')
 
     const imageInfo = document.querySelector('#image')
+    imageInfo.innerHTML = ' '
     imageInfo.src = character.images.md
 
     const nameInfo = document.querySelector('#name')
+    nameInfo.innerHTML = ' '
     nameInfo.textContent = `Name: ${character.name}`
 
     const slugInfo = document.querySelector('#slug')
+    slugInfo.innerHTML = ' '
     slugInfo.textContent = `Slug: ${character.slug}`
 
     const statsInfo = document.querySelector('#powerstats')
     const ul = document.querySelector('.powerstats')
+    ul.innerHTML = ' '
     document.querySelector('.intelligence span').innerText = character.powerstats.intelligence
     document.querySelector('.strength span').innerText = character.powerstats.strength
     document.querySelector('.speed span').innerText = character.powerstats.speed
@@ -68,6 +72,7 @@ function showInfo(character){
     
     const appearanceInfo = document.querySelector('#appearance')
     const appearance= document.querySelector('.appearance')
+    appearance.innerHTML = ' '
     document.querySelector('.gender span').innerText = character.appearance.gender
     document.querySelector('.race span').innerText = character.appearance.race
     document.querySelector('.height span').innerText = character.appearance.height[0]
@@ -75,25 +80,17 @@ function showInfo(character){
     document.querySelector('.eye_color span').innerText = character.appearance.eyeColor
     document.querySelector('.hair_color span').innerText = character.appearance.hairColor
 
-    
-    // const biographyInfo = document.querySelector('#biography')
-    // const biography = document.querySelectorAll('.biography')
-    // document.querySelector('.full_name span').innerText = character.biography.fullName
-    // document.querySelector('.alter_ego span').innerText = character.biography.alterEgos
-    // document.querySelector('.aliases span').innerText = character.biography.aliases
-    // document.querySelector('.place_of_birth span').innerText = character.biography.placeOfBirth
-    // document.querySelector('.first_appearance span').innerText = character.biography.firstAppearance
-    // document.querySelector('.publisher span').innerText = character.biography.publisher
-    // document.querySelector('.alignment span').innerText = character.biography.alignment
-   
+  
 
     const workInfo = document.querySelector('#work')
     const work =document.querySelector('.work')
+    work.innerHTML = ' '
     document.querySelector('.occupation span').innerText = character.work['occupation']
     document.querySelector('.base span').innerText = character.work.base
 
     const connectionsInfo = document.querySelector('#connections')
     const connections = document.querySelector('.connections')
+    connections.innerHTML = ' '
     document.querySelector('.group_affiliation span').innerText =character.connections['groupAffiliation']
     document.querySelector('.relatives span').innerText =character.connections['relatives']
     
